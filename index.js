@@ -25,12 +25,12 @@ app.use(express.json())
 app.use(cookieParser())
 app.use('/uploads', express.static(__dirname + '/uploads'))
 
-// app.use(cors(corsConfig))
+app.use(cors(corsConfig))
 
-app.use(cors({
-    credentials: true,
-    origin: 'https://booking-app-p1l3.vercel.app'
-}))
+// app.use(cors({
+//     credentials: true,
+//     origin: 'https://booking-app-p1l3.vercel.app'
+// }))
 
 mongoose.connect(process.env.MONGO_URL)
 

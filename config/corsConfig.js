@@ -1,4 +1,8 @@
-const allowedOrigins = ['https://booking-app-f4398.web.app', 'https://booking-app-p1l3.vercel.app'];
+const allowedOrigins = [
+    'https://booking-app-f4398.web.app', 
+    'https://booking-app-p1l3.vercel.app', 
+    'http://localhost:5173'
+];
 
 const corsConfig = {
     origin: (origin, callback) => {
