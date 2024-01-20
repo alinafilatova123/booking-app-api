@@ -6,6 +6,7 @@ const multer = require('multer')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 const imageDownloader = require('image-downloader')
+const corsConfig = require('./config/corsConfig')
 require('dotenv').config()
 const PORT = process.env.PORT || 4000;
 
@@ -24,10 +25,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use('/uploads', express.static(__dirname + '/uploads'))
 
-app.use(cors({
-    credentials: true,
-    origin: ['https://booking-app-f4398.web.app', 'https://booking-app-p1l3.vercel.app']
-}))
+app.use(cors(corsConfig))
 
 mongoose.connect(process.env.MONGO_URL)
 
